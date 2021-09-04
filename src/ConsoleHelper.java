@@ -1,6 +1,7 @@
 //Originally was supposed to be used to add an animation at a certain point.
 //Code is no longer used but kept for archive and future projects purposes
 
+//Test commit
 public class ConsoleHelper {
     private String lastLine = "";
 
