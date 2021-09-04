@@ -12,7 +12,7 @@ public class Main {
         System.out.println("Here is your Decryption code: " + decryptorCode);
         System.out.println("Welcome to password encryptor");
         Thread.sleep(1000);
-        System.out.println("Code made by: 7X_Z0");
+        System.out.println("Code made by: 7X-Z0");
         Thread.sleep(1000);
         System.out.println("To encrypt password, please provide encryption key");
         String userEncryption = UserInput.nextLine();
