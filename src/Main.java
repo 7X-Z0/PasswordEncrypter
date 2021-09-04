@@ -13,6 +13,7 @@ public class Main {
             String decryptorCode = String.valueOf(Main.decryptorString());
             System.out.println("Here is your Decryption code: " + decryptorCode);
             Thread.sleep(1000);
+            //TODO add code to ask to encrypt the password (Ask user to input encryption code)
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~\n" +
                     "Please input your password");
             String Input = UserInput.nextLine();
@@ -66,4 +67,5 @@ public class Main {
         }
         return decryptorCode;
     }
+    //TODO add encryptor string (Using to Method 2)
 }
