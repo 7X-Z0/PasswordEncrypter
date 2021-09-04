@@ -4,18 +4,28 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Scanner UserInput = new Scanner(System.in);
-        Main sw = new Main();
+            Scanner UserInput = new Scanner(System.in);
+            Main sw = new Main();
+            String encryptionCode = String.valueOf(Main.encryptionString());
+            System.out.println("Here is your public Encryption code: " + encryptionCode);
+            String decryptorCode = String.valueOf(Main.decryptorString());
+            System.out.println("Here is your Decryption code: " + decryptorCode);
             System.out.println("Welcome to password encryptor");
             Thread.sleep(1000);
             System.out.println("Code made by: 7X_Z0");
             Thread.sleep(1000);
-            String decryptorCode = String.valueOf(Main.decryptorString());
-            System.out.println("Here is your Decryption code: " + decryptorCode);
-            Thread.sleep(1000);
+            System.out.println("To encrypt password, please provide encryption key");
+            String userEncryption = UserInput.nextLine();
+            if (Objects.equals(userEncryption, encryptionCode)){
+                System.out.println("Encryption key correct (" + encryptionCode + ")");
+            } else {
+                System.out.println("Encryption key incorrect\n" + "Please refer to an admin or company portal to receive key");
+                System.out.println("Program terminated");
+                System.exit(0);
+            }
             //TODO add code to ask to encrypt the password (Ask user to input encryption code)
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~\n" +
-                    "Please input your password");
+                "Please input your password");
             String Input = UserInput.nextLine();
             Thread.sleep(100);
             String shuffled = sw.shuffle(Input);
@@ -68,4 +78,14 @@ public class Main {
         return decryptorCode;
     }
     //TODO add encryptor string (Using to Method 2)
+    public static StringBuilder encryptionString(){
+        String encryptionCharaters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder encryptionCode = new StringBuilder();
+        Random rnd = new Random();
+        while (encryptionCode.length() < 6){
+            int index = (int) (rnd.nextFloat() * encryptionCharaters.length());
+            encryptionCode.append(encryptionCharaters.charAt(index));
+        }
+        return encryptionCode;
+    }
 }
