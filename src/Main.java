@@ -7,9 +7,9 @@ public class Main {
         Scanner UserInput = new Scanner(System.in);
         Main sw = new Main();
         String encryptionCode = String.valueOf(Main.encryptionString());
-        System.out.println("Here is your public Encryption code: " + encryptionCode);
+        System.out.println("Here is your public Encryption key: " + encryptionCode);
         String decryptorCode = String.valueOf(Main.decryptorString());
-        System.out.println("Here is your Decryption code: " + decryptorCode);
+        System.out.println("Here is your Decryption key: " + decryptorCode);
         System.out.println("Welcome to password encryptor");
         Thread.sleep(1000);
         System.out.println("Code made by: 7X-Z0");
@@ -41,10 +41,16 @@ public class Main {
                 System.out.println("Incorrect code, stealing passwords is a crime\nAdmin has been notified, program terminated");
             }
         } else {
+            System.out.println("Thank you for using the program\n" + "Program ending.");
             System.exit(0);
         }
     }
-    //Method 1 Scrambling
+
+    //Method 1 Scrambling (longer)
+
+    //Method 1 uses the UserInput variable to add the password into a list
+    //The program uses the list to randomly swap the letters in the list and adds them into a new list called "shuffledWord"
+    //"shuffledWord" is then returned and shown to the user
     private String shuffle(String Input){
         String shuffledWord = Input;
         int wordSize = Input.length();
@@ -65,6 +71,14 @@ public class Main {
     }
 
     //Method 2 Scrambling (Simpler)
+
+    //Method 2 uses the StringBuilder function to generate a random encryption and decryption key
+    //The function uses a list of characters A-Z and 0-9
+    //The function also uses the Random import utility to choose random characters with the length specified in the code
+    //Modifications can be made by changing the "decryptioncharacters" variable to the User's input to Scramble the word
+    //Using the Input of the User's length, the length of the returned word, can be the same length as the User's Input.
+
+    //Decryption Key generator
     public static StringBuilder decryptorString(){
         String decryptioncharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder decryptorCode = new StringBuilder();
@@ -75,6 +89,8 @@ public class Main {
         }
         return decryptorCode;
     }
+
+    //Encryption key generator
     public static StringBuilder encryptionString(){
         String encryptionCharaters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder encryptionCode = new StringBuilder();
