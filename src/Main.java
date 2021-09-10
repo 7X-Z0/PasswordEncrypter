@@ -48,9 +48,9 @@ public class Main {
 
     //Method 1 Scrambling (longer)
 
-    //Method 1 uses the UserInput variable to add the password into a list
-    //The program uses the list to randomly swap the letters in the list and adds them into a new list called "shuffledWord"
-    //"shuffledWord" is then returned and shown to the user
+    /* Method 1 uses the UserInput variable to add the password into a list
+    The program uses the list to randomly swap the letters in the list and adds them into a new list called "shuffledWord"
+    "shuffledWord" is then returned and shown to the user */
     private String shuffle(String Input){
         String shuffledWord = Input;
         int wordSize = Input.length();
@@ -72,11 +72,11 @@ public class Main {
 
     //Method 2 Scrambling (Simpler)
 
-    //Method 2 uses the StringBuilder function to generate a random encryption and decryption key
-    //The function uses a list of characters A-Z and 0-9
-    //The function also uses the Random import utility to choose random characters with the length specified in the code
-    //Modifications can be made by changing the "decryptioncharacters" variable to the User's input to Scramble the word
-    //Using the Input of the User's length, the length of the returned word, can be the same length as the User's Input.
+    /* Method 2 uses the StringBuilder function to generate a random encryption and decryption key
+    The function uses a list of characters A-Z and 0-9
+    The function also uses the Random import utility to choose random characters with the length specified in the code
+    Modifications can be made by changing the "decryptioncharacters" variable to the User's input to Scramble the word
+    Using the Input of the User's length, the length of the returned word, can be the same length as the User's Input. */
 
     //Decryption Key generator
     public static StringBuilder decryptorString(){
