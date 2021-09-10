@@ -44,6 +44,7 @@ public class Main {
             System.out.println("Thank you for using the program\n" + "Program ending.");
             System.exit(0);
         }
+        UserInput.close();
     }
 
     //Method 1 Scrambling (longer)
